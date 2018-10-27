@@ -1,0 +1,5 @@
+5050
+6969
+This is the first optional line in NodeB's configuration file
+This is the second optional line
+NodeC should be printing these lines

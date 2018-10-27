@@ -1,0 +1,88 @@
+
+COMPILATION & EXECUTION INSTRUCTIONS:
+        COMPILATION:
+
+                "make":
+
+                        Both compiles and jars the source code into an executable file
+
+                "make compile":
+
+                        Only compiles the .java files into B-code
+
+                "make jar":
+
+                        Only jars pre-compiled B-code into an executable jar file called Project1.jar
+
+        EXECUTION:
+
+                The make file provides 7 different functionalities in order to run the program with all the different configurations of the node configuration files.
+
+                "make run_1":
+
+                        Starts the nodes in the order of A then B then C
+
+                "make run_2":
+
+                        Starts the nodes in the order of A then C then B
+
+                "make run_3":
+
+                        Starts the nodes in the order of B then A then C
+
+                "make run_4":
+
+                        Starts the nodes in the order of B then C then A
+
+                "make run_5":
+
+                        Starts the nodes in the order of C then A then B
+
+                "make run_6":
+
+                        Starts the nodes in the order of C then B then A
+
+                "make run_all":
+
+                        Executes all the aforementioned configurations in order from 1 to 6
+
+
+FILE DESCRIPTIONS:
+        
+        !!NOTE!! All the configuration files follow the same format. This means that if a node is only supposed to Transmit, the line where the receiving port would be is either not a number or -1
+
+        Configuration files:
+                <Port of receiving>
+                <Port of Transmitting>
+                <Line 1 of optional data>
+                <Line 2 of optional data>
+                <Line 3 of optional data>
+
+        Makefile:
+                Compiles, jars, and executes different configurations of the program
+
+        Project1.java
+                This file deals with the establishment of Node objects that, based on their supplied configuration file, becomes a transmitter or receiver or both
+
+        Node.java
+                This object, based on the configuration supplied to it, instantiates one or two SocketThread objects that, once again, based the constructor acts as either a transmitter or a receiver
+
+        SocketThread.java
+                This object acts as either a transmitter or receiver, and works by creating a thread that does only the task supplied to it by its super object
+
+
+FEATURE LIST:
+                        FEATURE                         |               STATUS
+        Project code has appropriate comments           |       Complete
+        Project compiles without/builds without errors  |       Complete
+        The program starts                              |       Complete
+        Creates and runs multiple Threads/Processes     |       Complete
+        Loads the configuration files                   |       Complete
+        Sends data through Sockets                      |       Complete
+        Receives data through Sockets                   |       Complete
+        Prints out the received data                    |       Complete        (In addition, the program prints out what thread received what data to indicate that the order of the nodes don't matter)
+        The program exits after sending/receiving data  |       Complete
+
+KNOWN BUGS:
+        Theoretically, the program should support more than 3 nodes as long as more configuration files are supplied as well as the current ones are altered to reflect this. !!!THIS HAS NOT BEEN TESTED!!!
+        It is also not possible to tell a node to send to two nodes or to instruct a node to receive from two nodes.

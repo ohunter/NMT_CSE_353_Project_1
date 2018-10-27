@@ -1,0 +1,5 @@
+--
+5050
+This is the first line of NodeA's configuration file
+This is the second line of NodeA's configuration file
+The two prior lines as well as this line are all optional
